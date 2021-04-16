@@ -36,6 +36,7 @@ public class menu extends AppCompatActivity {
         setContentView(R.layout.activity_menu);
         db = new Database(this);
         ArrayList<HashMap<String, String>> listCalon = db.getAllRecordOSIS();
+        Log.d("SIZE", ""+listCalon.size());
         for(int i = 0; i < listCalon.size(); i++){
             String a = listCalon.get(i).get("nama_osis");
             Log.d("Test"+i, a);

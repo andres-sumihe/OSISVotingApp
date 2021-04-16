@@ -101,7 +101,8 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
 
-        if (cursor.moveToFirst()) {
+        if (cursor.moveToFirst())
+            do {
             HashMap<String,String> murid = new HashMap<>();
             murid.put("nis_murid", cursor.getString(cursor.getColumnIndex(KEY_NIS_MURID)));
             murid.put("nama_murid", cursor.getString(cursor.getColumnIndex(KEY_NAMA_MURID)));
@@ -142,14 +143,17 @@ public class Database extends SQLiteOpenHelper {
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         if (cursor.moveToFirst()) {
-            HashMap<String,String> osis = new HashMap<>();
-            osis.put("nis_osis", cursor.getString(cursor.getColumnIndex(KEY_NIS_OSIS)));
-            osis.put("nama_osis", cursor.getString(cursor.getColumnIndex(KEY_NAMA_OSIS)));
-            osis.put("jenis_kelamin", cursor.getString(cursor.getColumnIndex(KEY_JENIS_KELAMIN)));
-            osis.put("kelas", cursor.getString(cursor.getColumnIndex(KEY_KELAS)));
-            osis.put("voting_count", cursor.getString(cursor.getColumnIndex(KEY_VOTING_COUNT)));
-            osisList.add(osis);
-        } while (cursor.moveToNext());
+            while(!cursor.isAfterLast()){
+                HashMap<String,String> osis = new HashMap<>();
+                osis.put("nis_osis", cursor.getString(cursor.getColumnIndex(KEY_NIS_OSIS)));
+                osis.put("nama_osis", cursor.getString(cursor.getColumnIndex(KEY_NAMA_OSIS)));
+                osis.put("jenis_kelamin", cursor.getString(cursor.getColumnIndex(KEY_JENIS_KELAMIN)));
+                osis.put("kelas", cursor.getString(cursor.getColumnIndex(KEY_KELAS)));
+                osis.put("voting_count", cursor.getString(cursor.getColumnIndex(KEY_VOTING_COUNT)));
+                osisList.add(osis);
+                cursor.moveToNext();
+            }
+        };
         return osisList;
     }
 

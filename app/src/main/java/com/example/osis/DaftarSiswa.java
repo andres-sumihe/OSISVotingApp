@@ -32,7 +32,7 @@ public class DaftarSiswa extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 murid.setNama_murid(namas.getText().toString());
-                murid.setNis_murid(Integer.parseInt(niss.getText().toString()));
+                murid.setNis_murid(niss.getText().toString());
                 murid.setPass_murid(passs.getText().toString());
                 db.addMurid(murid);
             }

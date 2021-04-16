@@ -224,15 +224,15 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.052" />
 
-    <Button
-        android:id="@+id/kembalisiswa"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="156dp"
-        android:layout_marginBottom="21dp"
-        android:text="Kembali" />
+<!--    <Button-->
+<!--        android:id="@+id/kembalisiswa"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentEnd="true"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_marginEnd="156dp"-->
+<!--        android:layout_marginBottom="21dp"-->
+<!--        android:text="Kembali" />-->
 
     <Button
         android:id="@+id/Pilih1"
