@@ -3,6 +3,7 @@ package com.example.osis;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -40,11 +41,11 @@ public class Database extends SQLiteOpenHelper {
     private static final String KEY_NOTIF_NO_ID = "notif_no";
     private static final String KEY_JUDUL = "judul";
     private static final String KEY_ISI = "isi";
-
+    private static final String DATABASE_SELECT_USERS = "users";
     //create table
     //murid
     String CREATE_MURID_TABLE = "CREATE TABLE " + TABLE_MURID + "("
-            + KEY_NIS_MURID + " INTEGER PRIMARY KEY,"
+            + KEY_NIS_MURID + " TEXT PRIMARY KEY,"
             + KEY_NAMA_MURID + " TEXT,"
             + KEY_PASS_MURID + " TEXT" + ")";
     //osis
@@ -205,4 +206,24 @@ public class Database extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         db.execSQL("delete from "+ TABLE_NOTIF);
     }
+
+    public Cursor fetchUser(String NIS, String pass) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor myCursor = db.query(TABLE_MURID,
+                new String[]{KEY_NIS_MURID, KEY_PASS_MURID},
+                KEY_NIS_MURID + "='" + NIS + "' AND " +
+                        KEY_PASS_MURID + "='" + pass + "'", null, null, null, null);
+
+        if (myCursor != null) {
+            myCursor.moveToFirst();
+        }
+        return myCursor;
+    }
+
+    public Database open() throws SQLException {
+        SQLiteDatabase db = this.getWritableDatabase();
+        return this;
+    }
+
+
 }
