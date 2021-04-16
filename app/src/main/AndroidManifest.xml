@@ -11,6 +11,7 @@
         android:theme="@style/Theme.Osis">
         <activity android:name=".DaftarOsis"></activity>
         <activity android:name=".DaftarSiswa" />
+        <activity android:name=".TampilanCalon" />
         <activity android:name=".MenuAdmin" />
         <activity android:name=".menu" />
         <activity android:name=".MainActivity">
