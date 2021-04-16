@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/kembali"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MenuAdmin">
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="87dp"
+        android:layout_marginBottom="447dp"
+        android:text="Daftar Osis" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="203dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="104dp"
+        android:layout_marginBottom="641dp"
+        android:text="Menu Admin"
+        android:textAppearance="@style/TextAppearance.AppCompat.Display1" />
+
+    <ImageButton
+        android:id="@+id/siswa"
+        android:layout_width="128dp"
+        android:layout_height="121dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="231dp"
+        android:layout_marginBottom="479dp"
+        android:src="@drawable/siswa" />
+
+    <ImageButton
+        android:id="@+id/osis"
+        android:layout_width="129dp"
+        android:layout_height="121dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="53dp"
+        android:layout_marginBottom="477dp"
+        android:src="@drawable/osis" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="244dp"
+        android:layout_marginBottom="448dp"
+        android:text="Daftar Siswa" />
+
+    <Button
+        android:id="@+id/kembaliadmin"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="156dp"
+        android:layout_marginBottom="311dp"
+        android:text="Kembali" />
+
+</RelativeLayout>
